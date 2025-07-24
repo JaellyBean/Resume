@@ -10,6 +10,11 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  /* Prevent horizontal scroll on mobile */
+  overflow-x: hidden;
+  /* Improve text rendering on mobile */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -42,6 +47,10 @@ body {
   --transition: all 0.3s ease;
   --max-width: 1200px;
   --section-padding: clamp(2rem, 5vw, 4rem);
+  /* Mobile-specific variables */
+  --mobile-padding: clamp(1rem, 4vw, 2rem);
+  --mobile-gap: clamp(1rem, 3vw, 1.5rem);
+  --touch-target: 48px;
 }
 
 /* Typography */
@@ -183,7 +192,7 @@ p {
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 
   .card {
@@ -193,6 +202,82 @@ p {
   .grid-2,
   .grid-3 {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Better spacing for mobile */
+  .section {
+    padding: clamp(2rem, 8vw, 4rem) 0;
+    min-height: auto;
+  }
+
+  /* Improved typography for mobile */
+  h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+    line-height: 1.6;
+  }
+
+  /* Better button sizing for mobile */
+  .btn {
+    padding: 14px 24px;
+    font-size: 1rem;
+    min-height: 48px;
+    width: auto;
+    min-width: 120px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .card {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  .section {
+    padding: clamp(1.5rem, 6vw, 3rem) 0;
+  }
+
+  /* Touch-friendly buttons */
+  .btn {
+    padding: 16px 20px;
+    min-height: 48px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* Better spacing for very small screens */
+  .grid {
+    gap: 1rem;
+  }
+
+  /* Improve navigation on small screens */
+  nav {
+    padding: 0 0.5rem;
+  }
+
+  /* Better form spacing */
+  form {
+    gap: 1rem;
+  }
+
+  /* Optimize social links spacing */
+  .social-links {
+    gap: 1rem;
   }
 }
 
@@ -320,12 +405,44 @@ img {
   text-align: center;
 }
 
-/* Center all inputs and form elements */
+/* Form elements */
 input,
 textarea,
 select {
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
+  /* Better mobile input styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Prevent zoom on iOS */
+  font-size: 16px;
+  /* Better touch targets */
+  min-height: var(--touch-target);
+  /* Smooth focus transitions */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(34, 34, 34, 0.1);
+}
+
+/* Touch-friendly buttons */
+button,
+.btn {
+  min-height: var(--touch-target);
+  cursor: pointer;
+  /* Disable text selection on buttons */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Smooth touch feedback */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Responsive container widths */

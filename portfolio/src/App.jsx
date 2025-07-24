@@ -3,6 +3,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
+import Navigation from "./components/Navigation";
 import "./styles/globals.css";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         margin: "0 auto",
       }}
     >
+      <Navigation />
       <Hero />
       <About />
       <Projects />

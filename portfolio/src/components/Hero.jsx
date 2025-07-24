@@ -21,6 +21,7 @@ const Hero = () => {
         textAlign: "center",
         width: "100%",
         padding: "0 clamp(1rem, 4vw, 2rem)",
+        paddingTop: "80px", // Account for fixed navigation
       }}
     >
       <div
@@ -110,6 +111,8 @@ const Hero = () => {
               alignItems: "center",
               marginBottom: "3rem",
               textAlign: "center",
+              width: "100%",
+              maxWidth: "300px",
             }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -132,6 +135,9 @@ const Hero = () => {
                 cursor: "pointer",
                 transition: "all 0.2s ease",
                 textAlign: "center",
+                minHeight: "48px",
+                width: "100%",
+                maxWidth: "200px",
               }}
               whileHover={{ backgroundColor: "#444" }}
               whileTap={{ scale: 0.98 }}
