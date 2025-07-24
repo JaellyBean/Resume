@@ -38,7 +38,7 @@ const About = () => {
         style={{
           maxWidth: "800px",
           margin: "0 auto",
-          padding: "0 2rem",
+          padding: "0 clamp(1rem, 4vw, 2rem)",
           textAlign: "center",
           display: "flex",
           flexDirection: "column",

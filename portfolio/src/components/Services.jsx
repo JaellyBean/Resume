@@ -78,7 +78,7 @@ const Services = () => {
         style={{
           maxWidth: "1000px",
           margin: "0 auto",
-          padding: "0 2rem",
+          padding: "0 clamp(1rem, 4vw, 2rem)",
           textAlign: "center",
           display: "flex",
           flexDirection: "column",
@@ -136,11 +136,12 @@ const Services = () => {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-              gap: "2rem",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "1.5rem",
               maxWidth: "900px",
               margin: "0 auto",
               textAlign: "center",
+              padding: "0 1rem",
             }}
           >
             {services.map((service, index) => (

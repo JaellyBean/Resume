@@ -136,11 +136,12 @@ const Contact = () => {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
-              gap: "3rem",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "2rem",
               maxWidth: "900px",
               margin: "0 auto",
               textAlign: "center",
+              padding: "0 1rem",
             }}
           >
             {/* Contact Form */}
@@ -197,13 +198,15 @@ const Contact = () => {
                     required
                     style={{
                       width: "100%",
-                      padding: "0.75rem",
+                      padding: "0.875rem",
                       border: "1px solid #e0e0e0",
                       borderRadius: "4px",
-                      fontSize: "1rem",
+                      fontSize: "16px", // Prevents zoom on iOS
                       transition: "border-color 0.2s ease",
                       backgroundColor: "white",
                       textAlign: "left",
+                      minHeight: "48px",
+                      boxSizing: "border-box",
                     }}
                     onFocus={(e) => (e.target.style.borderColor = "#222")}
                     onBlur={(e) => (e.target.style.borderColor = "#e0e0e0")}
@@ -233,13 +236,15 @@ const Contact = () => {
                     required
                     style={{
                       width: "100%",
-                      padding: "0.75rem",
+                      padding: "0.875rem",
                       border: "1px solid #e0e0e0",
                       borderRadius: "4px",
-                      fontSize: "1rem",
+                      fontSize: "16px", // Prevents zoom on iOS
                       transition: "border-color 0.2s ease",
                       backgroundColor: "white",
                       textAlign: "left",
+                      minHeight: "48px",
+                      boxSizing: "border-box",
                     }}
                     onFocus={(e) => (e.target.style.borderColor = "#222")}
                     onBlur={(e) => (e.target.style.borderColor = "#e0e0e0")}
@@ -269,12 +274,14 @@ const Contact = () => {
                     required
                     style={{
                       width: "100%",
-                      padding: "0.75rem",
+                      padding: "0.875rem",
                       border: "1px solid #e0e0e0",
                       borderRadius: "4px",
-                      fontSize: "1rem",
+                      fontSize: "16px", // Prevents zoom on iOS
                       transition: "border-color 0.2s ease",
                       backgroundColor: "white",
+                      minHeight: "48px",
+                      boxSizing: "border-box",
                       textAlign: "left",
                     }}
                     onFocus={(e) => (e.target.style.borderColor = "#222")}
@@ -305,14 +312,16 @@ const Contact = () => {
                     rows="5"
                     style={{
                       width: "100%",
-                      padding: "0.75rem",
+                      padding: "0.875rem",
                       border: "1px solid #e0e0e0",
                       borderRadius: "4px",
-                      fontSize: "1rem",
+                      fontSize: "16px", // Prevents zoom on iOS
                       resize: "vertical",
                       transition: "border-color 0.2s ease",
                       backgroundColor: "white",
                       textAlign: "left",
+                      minHeight: "120px",
+                      boxSizing: "border-box",
                     }}
                     onFocus={(e) => (e.target.style.borderColor = "#222")}
                     onBlur={(e) => (e.target.style.borderColor = "#e0e0e0")}
@@ -326,7 +335,7 @@ const Contact = () => {
                     backgroundColor: "#222",
                     color: "white",
                     padding: "0.875rem 2rem",
-                    fontSize: "1rem",
+                    fontSize: "16px", // Consistent with other inputs
                     fontWeight: 400,
                     border: "none",
                     borderRadius: "4px",
@@ -339,6 +348,10 @@ const Contact = () => {
                     transition: "all 0.2s ease",
                     textAlign: "center",
                     margin: "0 auto",
+                    minHeight: "48px",
+                    width: "100%",
+                    maxWidth: "280px",
+                    boxSizing: "border-box",
                   }}
                   whileHover={{
                     backgroundColor: isSubmitting ? "#222" : "#444",
